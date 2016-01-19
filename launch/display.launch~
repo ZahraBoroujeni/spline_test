@@ -1,5 +1,6 @@
 
 <launch>
   <node name="spline_test" pkg="spline_test" type="spline_test" />
+  <node name="rviz" pkg="rviz" type="rviz" ns="spline_test"/>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find spline_test)/launch/spline_test.rviz" />
 </launch>
