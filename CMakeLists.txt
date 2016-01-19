@@ -2,13 +2,8 @@ cmake_minimum_required(VERSION 2.8.3)
 project(spline_test)
 
 find_package(catkin REQUIRED roscpp
-  ecl_containers
   ecl_geometry
-  moveit_msgs
   std_msgs
-  visualization_msgs
-  rosbag
-  roscpp
   tf std_msgs sensor_msgs geometry_msgs nav_msgs
 )
 
