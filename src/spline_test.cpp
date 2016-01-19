@@ -38,14 +38,15 @@ nav_msgs::Path subsample(CubicSpline cubic,float start_x, float end_x)
     std::vector<geometry_msgs::PoseStamped> plan;
     nav_msgs::Path gui_path;
    geometry_msgs::PoseStamped new_goal;
+   int sampling_num=10;
     //ros::Rate loop_rate(1);
-   for (int i=0; i<200; i++){
+   for (int i=0; i<sampling_num; i++){
 
       //tf::Quaternion goal_quat = tf::createQuaternionFromRPY(0,0,1);
 
 
-      new_goal.pose.position.x = i*(end_x-start_x)/200+start_x;
-      new_goal.pose.position.y = cubic(i*(end_x-start_x)/200+start_x);
+      new_goal.pose.position.x = i*(end_x-start_x)/sampling_num+start_x;
+      new_goal.pose.position.y = cubic(i*(end_x-start_x)/sampling_num+start_x);
        new_goal.pose.orientation.x = 0;
        new_goal.pose.orientation.y =0;
        new_goal.pose.orientation.z = 0;
