@@ -1,49 +1,22 @@
-/**
- * @file /src/test/cubic_splines.cpp
- *
- * @brief Unit Test for cubic splines.
- *
- * @date 20/05/2009
- **/
-
-/*****************************************************************************
-** Includes
-*****************************************************************************/
-//ros-indigo-ecl-geometry
 #include "ros/ros.h"
-
 #include <string>
 #include <gtest/gtest.h>
 #include <ecl/containers.hpp>
 #include <ecl/geometry.hpp>
 #include "nav_msgs/Path.h"
 
-/*****************************************************************************
-** Using
-*****************************************************************************/
-
-//using std::cout; using std::endl;
 using std::string;
 using ecl::Array;
-//using ecl::RightAlign;
-//using ecl::Format;
 using ecl::CubicPolynomial;
 using ecl::CubicSpline;
 
-/*****************************************************************************
-** Main program
-*****************************************************************************/
 nav_msgs::Path subsample(CubicSpline cubic,float start_x, float end_x)
 {
     std::vector<geometry_msgs::PoseStamped> plan;
     nav_msgs::Path gui_path;
    geometry_msgs::PoseStamped new_goal;
    int sampling_num=10;
-    //ros::Rate loop_rate(1);
    for (int i=0; i<sampling_num; i++){
-
-      //tf::Quaternion goal_quat = tf::createQuaternionFromRPY(0,0,1);
-
 
       new_goal.pose.position.x = i*(end_x-start_x)/sampling_num+start_x;
       new_goal.pose.position.y = cubic(i*(end_x-start_x)/sampling_num+start_x);
