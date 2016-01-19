@@ -1,0 +1,5 @@
+
+<launch>
+  <node name="spline_test" pkg="spline_test" type="spline_test" />
+  <node name="rviz" pkg="rviz" type="rviz" ns="$(arg namespace)"/>
+</launch>
