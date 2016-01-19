@@ -12,6 +12,8 @@ find_package(Boost REQUIRED COMPONENTS system filesystem)
 find_package(OpenCV REQUIRED)
 
 catkin_package(
+  INCLUDE_DIRS
+    include
 )
 ###########
 ## Build ##
